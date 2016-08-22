@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'yaml'
 require 'nokogiri'
 
-module Aliyun
+module AliyunSDK
   module OSS
 
     describe "Resumable download" do
@@ -124,7 +124,7 @@ module Aliyun
 
       it "should resume when checkpoint fails" do
         # Monkey patch to inject failures
-        class ::Aliyun::OSS::Multipart::Download
+        class ::AliyunSDK::OSS::Multipart::Download
           alias :old_checkpoint :checkpoint
 
           def checkpoint_fails

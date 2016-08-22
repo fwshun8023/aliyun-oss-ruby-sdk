@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'yaml'
 require 'nokogiri'
 
-module Aliyun
+module AliyunSDK
   module OSS
 
     describe "Resumable upload" do
@@ -273,7 +273,7 @@ module Aliyun
 
       it "should resume when checkpoint fails" do
         # Monkey patch to inject failures
-        class ::Aliyun::OSS::Multipart::Upload
+        class ::AliyunSDK::OSS::Multipart::Upload
           alias :old_checkpoint :checkpoint
 
           def checkpoint_fails

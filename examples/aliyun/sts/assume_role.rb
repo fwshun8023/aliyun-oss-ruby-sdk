@@ -4,10 +4,10 @@ $LOAD_PATH.unshift(File.expand_path("../../../../lib", __FILE__))
 require 'yaml'
 require 'aliyun/sts'
 
-Aliyun::Common::Logging.set_log_level(Logger::DEBUG)
+AliyunSDK::Common::Logging.set_log_level(Logger::DEBUG)
 conf_file = '~/.sts.yml'
 conf = YAML.load(File.read(File.expand_path(conf_file)))
-client = Aliyun::STS::Client.new(
+client = AliyunSDK::STS::Client.new(
   :access_key_id => conf['access_key_id'],
   :access_key_secret => conf['access_key_secret'])
 
@@ -40,7 +40,7 @@ end
 
 demo "Assume role with policy" do
   begin
-    policy = Aliyun::STS::Policy.new
+    policy = AliyunSDK::STS::Policy.new
     policy.allow(
       ['oss:Get*', 'oss:PutObject'],
       ['acs:oss:*:*:my-bucket', 'acs:oss:*:*:my-bucket/*'])

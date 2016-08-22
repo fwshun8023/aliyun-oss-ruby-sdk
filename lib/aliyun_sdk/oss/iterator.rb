@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-module Aliyun
+module AliyunSDK
   module OSS
     ##
     # Iterator structs that wrap the multiple communications with the

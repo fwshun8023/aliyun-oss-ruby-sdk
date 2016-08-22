@@ -6,7 +6,7 @@ require 'aliyun/sts'
 require 'aliyun/oss'
 
 # 初始化OSS client
-Aliyun::Common::Logging.set_log_level(Logger::DEBUG)
+AliyunSDK::Common::Logging.set_log_level(Logger::DEBUG)
 conf_file = '~/.sts.yml'
 conf = YAML.load(File.read(File.expand_path(conf_file)))
 
@@ -20,14 +20,14 @@ def demo(msg)
 end
 
 demo "Using STS" do
-  sts = Aliyun::STS::Client.new(
+  sts = AliyunSDK::STS::Client.new(
     :access_key_id => conf['access_key_id'],
     :access_key_secret => conf['access_key_secret'])
 
   token = sts.assume_role(
     'acs:ram::52352:role/aliyunosstokengeneratorrole', 'app-1')
 
-  client = Aliyun::OSS::Client.new(
+  client = AliyunSDK::OSS::Client.new(
     :endpoint => 'http://oss-cn-hangzhou.aliyuncs.com',
     :sts_token => token.security_token,
     :access_key_id => token.access_key_id,

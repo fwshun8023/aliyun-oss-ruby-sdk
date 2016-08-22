@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-module Aliyun
+module AliyunSDK
   module STS
 
     # A place to store various configurations: credentials, api

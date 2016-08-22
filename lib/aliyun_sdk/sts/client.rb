@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-module Aliyun
+module AliyunSDK
   module STS
 
     # STS服务的客户端，用于向STS申请临时token。

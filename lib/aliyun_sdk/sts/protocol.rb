@@ -4,7 +4,7 @@ require 'rest-client'
 require 'nokogiri'
 require 'time'
 
-module Aliyun
+module AliyunSDK
   module STS
 
     # Protocol implements the STS Open API which is low-level. User

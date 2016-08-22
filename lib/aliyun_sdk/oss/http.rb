@@ -4,7 +4,7 @@ require 'rest-client'
 require 'resolv'
 require 'fiber'
 
-module Aliyun
+module AliyunSDK
   module OSS
 
     ##

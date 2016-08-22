@@ -2,7 +2,7 @@
 
 require 'logger'
 
-module Aliyun
+module AliyunSDK
   module Common
     ##
     # Logging support

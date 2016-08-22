@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-module Aliyun
+module AliyunSDK
   module OSS
 
     describe HTTP do

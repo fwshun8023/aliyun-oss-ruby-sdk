@@ -14,10 +14,10 @@ require 'aliyun/oss'
 # 2. 只有put_object和resumable_upload支持上传回调
 
 # 初始化OSS client
-Aliyun::Common::Logging.set_log_level(Logger::DEBUG)
+AliyunSDK::Common::Logging.set_log_level(Logger::DEBUG)
 conf_file = '~/.oss.yml'
 conf = YAML.load(File.read(File.expand_path(conf_file)))
-bucket = Aliyun::OSS::Client.new(
+bucket = AliyunSDK::OSS::Client.new(
   :endpoint => conf['endpoint'],
   :cname => conf['cname'],
   :access_key_id => conf['access_key_id'],
@@ -33,7 +33,7 @@ def demo(msg)
 end
 
 demo "put object with callback" do
-  callback = Aliyun::OSS::Callback.new(
+  callback = AliyunSDK::OSS::Callback.new(
     url: 'http://10.101.168.94:1234/callback',
     query: {user: 'put_object'},
     body: 'bucket=${bucket}&object=${object}'
@@ -41,13 +41,13 @@ demo "put object with callback" do
 
   begin
     bucket.put_object('files/hello', callback: callback)
-  rescue Aliyun::OSS::CallbackError => e
+  rescue AliyunSDK::OSS::CallbackError => e
     puts "Callback failed: #{e.message}"
   end
 end
 
 demo "resumable upload with callback" do
-  callback = Aliyun::OSS::Callback.new(
+  callback = AliyunSDK::OSS::Callback.new(
     url: 'http://10.101.168.94:1234/callback',
     query: {user: 'resumable_upload'},
     body: 'bucket=${bucket}&object=${object}'
@@ -55,7 +55,7 @@ demo "resumable upload with callback" do
 
   begin
     bucket.resumable_upload('files/world', '/tmp/x', callback: callback)
-  rescue Aliyun::OSS::CallbackError => e
+  rescue AliyunSDK::OSS::CallbackError => e
     puts "Callback failed: #{e.message}"
   end
 end

@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'yaml'
 require 'nokogiri'
 
-module Aliyun
+module AliyunSDK
   module OSS
 
     describe Client do

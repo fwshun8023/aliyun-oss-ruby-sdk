@@ -4,7 +4,7 @@ require 'rest-client'
 require 'nokogiri'
 require 'time'
 
-module Aliyun
+module AliyunSDK
   module OSS
 
     ##

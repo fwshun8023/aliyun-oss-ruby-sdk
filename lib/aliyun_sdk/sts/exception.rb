@@ -2,7 +2,7 @@
 
 require 'nokogiri'
 
-module Aliyun
+module AliyunSDK
   module STS
 
     # ServerError represents exceptions from the STS

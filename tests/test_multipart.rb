@@ -7,12 +7,12 @@ require_relative 'config'
 
 class TestMultipart < Minitest::Test
   def setup
-    Aliyun::Common::Logging.set_log_level(Logger::DEBUG)
-    client = Aliyun::OSS::Client.new(TestConf.creds)
+    AliyunSDK::Common::Logging.set_log_level(Logger::DEBUG)
+    client = AliyunSDK::OSS::Client.new(TestConf.creds)
     @bucket_name = TestConf.bucket
     @bucket = client.get_bucket(TestConf.bucket)
 
-    @protocol = Aliyun::OSS::Protocol.new(Aliyun::OSS::Config.new(TestConf.creds))
+    @protocol = AliyunSDK::OSS::Protocol.new(AliyunSDK::OSS::Config.new(TestConf.creds))
     @prefix = 'tests/multipart/'
   end
 

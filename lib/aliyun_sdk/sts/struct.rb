@@ -3,7 +3,7 @@
 require 'json'
 require 'cgi'
 
-module Aliyun
+module AliyunSDK
   module STS
 
     # STS Policy. Referer to

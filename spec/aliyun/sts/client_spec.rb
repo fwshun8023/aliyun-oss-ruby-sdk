@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'yaml'
 require 'nokogiri'
 
-module Aliyun
+module AliyunSDK
   module STS
 
     describe Client do

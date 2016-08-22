@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-module Aliyun
+module AliyunSDK
   module Common
 
     # Common structs used. It provides a 'attrs' helper method for
